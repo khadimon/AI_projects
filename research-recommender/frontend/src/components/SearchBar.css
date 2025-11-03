@@ -1,0 +1,305 @@
+/* Body styling for full page light/dark mode */
+body.light-mode {
+  background-color: #f0f2f5; /* light background */
+  color: #2c3e50;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e; /* dark background */
+  color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: block; 
+}
+
+/* Container */
+.search-bar-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header row with toggle button */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  min-width: 150px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Input colors based on mode */
+.search-bar-container.light .search-form input {
+  background-color: #ffffff;
+  color: #2c3e50;
+  border: 1px solid #ccc;
+}
+
+.search-bar-container.dark .search-form input {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Button colors based on mode */
+.search-bar-container.light .search-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.search-bar-container.light .search-form button:hover {
+  background-color: #2980b9;
+}
+
+.search-bar-container.dark .search-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.search-bar-container.dark .search-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Status messages */
+.status {
+  text-align: center;
+  font-size: 16px;
+}
+
+.status.error {
+  color: red;
+}
+
+/* Responsive grid for cards */
+.papers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Paper card */
+.paper-card {
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.paper-card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.paper-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.paper-card .summary {
+  font-style: italic;
+}
+
+.paper-card a {
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto;
+  transition: color 0.2s;
+}
+
+.search-bar-container.light .paper-card a {
+  color: #3498db;
+}
+
+.search-bar-container.dark .paper-card a {
+  color: #4aa3f0;
+}
+
+.paper-card a:hover {
+  text-decoration: underline;
+}
+
+/* Toggle button */
+.mode-toggle {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-bar-container.light .mode-toggle {
+  background-color: #3498db;
+  color: white;
+}
+
+.search-bar-container.light .mode-toggle:hover {
+  background-color: #2980b9;
+}
+
+.search-bar-container.dark .mode-toggle {
+  background-color: #4aa3f0;
+  color: white;
+}
+
+.search-bar-container.dark .mode-toggle:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive input and grid tweaks */
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+}
+
+/* Base style for inputs and selects */
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  min-width: 150px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Light mode */
+.search-bar-container.light .search-input {
+  background-color: #ffffff;
+  color: #2c3e50;
+  border: 1px solid #ccc;
+}
+
+/* Dark mode */
+.search-bar-container.dark .search-input {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+
+/* Align text left and add spacing */
+.paper-card {
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;  /* changed */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Title */
+.paper-card h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+/* Source and year metadata */
+.paper-card .meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* Authors */
+.paper-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Abstract styling */
+.paper-card .summary {
+  font-style: italic;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.paper-card a {
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto;
+  transition: color 0.2s;
+}
+
+/* Filters container */
+.filters {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.filters select, .filters input {
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filters select.search-input,
+.filters input.search-input {
+  width: 150px; /* optional: uniform width */
+  margin-top: 5px;
+}
